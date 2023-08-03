@@ -55,6 +55,7 @@ Install MySQL Client: `sudo apt install mysql-client`
 4. Connected to MySQL Server: If the credentials are correct, you will be connected to the MySQL server, and you'll see a MySQL prompt where you can start running MySQL commands.
 5. Run MySQL Commands: Now that we are connected to the MySQL server from the client, we can run MySQL commands. For example, we can show the databases, and see the database we created using the command `SHOW DATABASES;`
 ![ResultInClientServer](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/07ce4626-f50c-4c2b-bf1b-4768070e0ccf)
+
 If we observe an output similar to the image above, it indicates the successful completion of this project. We have now deployed a fully functional MySQL Client-Server setup.
 
 # **THANK YOU!**
