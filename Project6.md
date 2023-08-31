@@ -40,7 +40,7 @@ Initiate the launch of an EC2 instance designated as your "Web Server." Generate
 
 Successively affix all three volumes to your Web Server EC2 instance.
 
-!\[AttachVolume\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d49bb005-1e20-4b9c-b880-5527e865edb2](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d49bb005-1e20-4b9c-b880-5527e865edb2)))  
+![AttachVolume](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d49bb005-1e20-4b9c-b880-5527e865edb2) 
 
   
 
@@ -48,13 +48,13 @@ Commence the configuration process by accessing the Linux terminal.
 
 Utilize the "`lsblk`" command to examine the attached block devices on the server. Take note of the identifiers for your freshly established devices. 
 
-!\[PartitionList\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/8f7fe421-1e36-4293-81d0-ff4c54c3cf00](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/8f7fe421-1e36-4293-81d0-ff4c54c3cf00))  
+![PartitionList](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/8f7fe421-1e36-4293-81d0-ff4c54c3cf00)
 
   
 
 In Linux, all devices are located in the /dev/ directory. Confirm their presence by executing "`ls /dev/`" and verifying the existence of all three recently added block devices—likely labeled as xvdf, xvdh, and xvdg.
 
-!\[lsblkVolume\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0679c6b7-5ad7-42c6-b6fa-2d4f0189a233](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0679c6b7-5ad7-42c6-b6fa-2d4f0189a233))  
+![lsblkVolume](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0679c6b7-5ad7-42c6-b6fa-2d4f0189a233)
 
   
 
@@ -64,7 +64,7 @@ Utilize the "gdisk" utility to craft a single partition on each of the three d
 
 Execute the command "`sudo gdisk /dev/xvdf`", “`sudo gdisk /dev/xvdg`” and “`sudo gdisk /dev/xvdh`”to achieve this.
 
-!\[image\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/a24b45cd-3f18-4b3a-b2fb-02a3919216d8](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/a24b45cd-3f18-4b3a-b2fb-02a3919216d8))  
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/a24b45cd-3f18-4b3a-b2fb-02a3919216d8)  
 
   
 
@@ -86,7 +86,7 @@ sudo pvcreate /dev/xvdh1
 
 Confirm the successful creation of the physical volumes by executing "`sudo pvs`."
 
-!\[PhysicalVolumeCreate\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/49cc65f6-6901-4676-98de-7e7d0f810388](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/49cc65f6-6901-4676-98de-7e7d0f810388))  
+![PhysicalVolumeCreate](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/49cc65f6-6901-4676-98de-7e7d0f810388)  
 
   
 
@@ -96,7 +96,7 @@ Apply the "vgcreate" utility to aggregate all three PVs into a volume group (V
 
 Confirm the successful creation of the volume group by running "`sudo vgs`."
 
-!\[WebDataCreate\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/f052c250-9db4-4678-b19b-e53efb7d064b](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/f052c250-9db4-4678-b19b-e53efb7d064b))  
+![WebDataCreate](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/f052c250-9db4-4678-b19b-e53efb7d064b)  
 
   
 
@@ -111,7 +111,7 @@ sudo lvcreate -n logs-lv -L 14G webdata-vg
 
 Verify the successful creation of the logical volumes by executing "`sudo lvs`."  
 
-!\[LVinto2\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/3e37e7e8-5287-4ce4-b47b-ccb8cbec911a](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/3e37e7e8-5287-4ce4-b47b-ccb8cbec911a))  
+![LVinto2](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/3e37e7e8-5287-4ce4-b47b-ccb8cbec911a)  
 
   
 
@@ -122,7 +122,7 @@ sudo vgdisplay -v #view complete setup - VG, PV, and LV
 sudo lsblk
 ```
 
-!\[image\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/98ae8c86-7b56-4552-8cd2-481466bde6fe](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/98ae8c86-7b56-4552-8cd2-481466bde6fe))  
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/98ae8c86-7b56-4552-8cd2-481466bde6fe)  
 
   
 
@@ -151,7 +151,7 @@ Restore the log files to the "/var/log" directory: `sudo rsync -av /home/reco
 
 Update the "/etc/fstab" file to ensure the mount configuration persists after server restarts. The UUID of the device will be used for this purpose: `sudo blkid`
 
-!\[image\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d1e41046-1c9e-42a8-aa37-e85013c5791c](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d1e41046-1c9e-42a8-aa37-e85013c5791c))  
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d1e41046-1c9e-42a8-aa37-e85013c5791c)  
 
   
 
@@ -159,7 +159,7 @@ Update the "/etc/fstab" file to ensure the mount configuration persists after 
 
 Update /etc/fstab in this format using your own UUID and rememeber to remove the leading and ending quotes.
 
-!\[OwnUUID\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ddca9e75-624d-4dca-b29a-c60bef20ec89](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ddca9e75-624d-4dca-b29a-c60bef20ec89))  
+![OwnUUID](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ddca9e75-624d-4dca-b29a-c60bef20ec89)  
 
   
 
@@ -174,7 +174,7 @@ sudo systemctl daemon-reload
 
 Confirm the setup by executing "`df -h`"; the output should resemble the following format.
 
-!\[UUIDSetupConfirm\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/2dc6a912-32e3-40d3-a31a-ca08d0df883c](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/2dc6a912-32e3-40d3-a31a-ca08d0df883c))  
+![UUIDSetupConfirm](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/2dc6a912-32e3-40d3-a31a-ca08d0df883c)  
 
   
 
@@ -223,7 +223,7 @@ sudo setsebool -P httpd_execmem 1
 
 Restart Apache to apply the changes: `sudo systemctl restart httpd`
 
-!\[image\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/e9028324-c9ed-461e-bc23-b339078603af](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/e9028324-c9ed-461e-bc23-b339078603af))  
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/e9028324-c9ed-461e-bc23-b339078603af)  
 
   
 
@@ -268,7 +268,7 @@ sudo systemctl restart mysqld
 sudo systemctl enable mysqld
 ```
 
-!\[MySQLRunningDBServer\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/04056547-cc3a-4adb-b0c0-21f3d34eee62](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/04056547-cc3a-4adb-b0c0-21f3d34eee62))  
+![MySQLRunningDBServer](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/04056547-cc3a-4adb-b0c0-21f3d34eee62)  
 
   
 
@@ -291,7 +291,7 @@ SHOW DATABASES;
 exit
 ```
 
-!\[ShowDatabase\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/56df72f9-ca1c-4090-acd8-4b2f26568d01](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/56df72f9-ca1c-4090-acd8-4b2f26568d01))  
+![ShowDatabase](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/56df72f9-ca1c-4090-acd8-4b2f26568d01)  
 
   
 
@@ -299,7 +299,7 @@ Phase 6 — Configuring WordPress to Connect to Remote Database
 
 Note: Remember to open MySQL port 3306 on the DB Server EC2. For added security, allow access to the DB server solely from your Web Server's IP address, specifying the source as /32 in the Inbound Rule configuration.
 
-!\[MySqlInboundRule\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ec7eb9cd-fcc9-4539-9407-069504d97b98](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ec7eb9cd-fcc9-4539-9407-069504d97b98))  
+![MySqlInboundRule](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ec7eb9cd-fcc9-4539-9407-069504d97b98)  
 
   
 
@@ -314,18 +314,23 @@ sudo mysql -u admin -p -h DB-Server-Private-IP-address
 
 Confirm successful execution of the "`SHOW DATABASES;`" command, displaying the list of existing databases.
 
-!\[ShowDatabaseOnMyWebServer\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0a07e46f-e7d4-44c3-bc6f-9ba11764cb52](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0a07e46f-e7d4-44c3-bc6f-9ba11764cb52))  
+![ShowDatabaseOnMyWebServer](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0a07e46f-e7d4-44c3-bc6f-9ba11764cb52)  
 
 Adjust permissions and configuration to enable Apache's usage of WordPress.  
 Enable TCP port 80 in Inbound Rules configuration for your Web Server EC2 (either allow from everywhere 0.0.0.0/0 or your workstation's IP).  
 Access your WordPress link in your browser, typically [http://Web-Server-Public-IP-Address/wordpress/.](http://Web-Server-Public-IP-Address/wordpress/.)  
 
-!\[wordpress1\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0ecabeb0-ede5-459f-a786-0f4bc2e52dec](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0ecabeb0-ede5-459f-a786-0f4bc2e52dec))  
+![wordpress1](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0ecabeb0-ede5-459f-a786-0f4bc2e52dec)  
 
 Fill in your DB credentials.
 
-!\[wordpresswelcome\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/6d20b182-9986-4fd5-8e8c-65d93e71c0f6](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/6d20b182-9986-4fd5-8e8c-65d93e71c0f6))  
+![wordpresswelcome](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/6d20b182-9986-4fd5-8e8c-65d93e71c0f6)  
 
 Upon encountering the message in the picture below, it signifies that your WordPress has successfully established a connection with your remote MySQL database.
 
-!\[WordpressFullPage\]([https://github.com/Bamideleflint/Darey-PBL/assets/122679229/b803e153-3969-466e-996e-de9752960faa](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/b803e153-3969-466e-996e-de9752960faa))
+![WordpressFullPage](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/b803e153-3969-466e-996e-de9752960faa)
+
+
+
+
+# **The End**
