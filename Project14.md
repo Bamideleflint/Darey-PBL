@@ -31,7 +31,7 @@ Deploy an artifact from CI: At this stage, the difference between CI and CD is s
 To emphasize a typical CI Pipeline further, let us explore the diagram below a little deeper.
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/4c45529c-42a4-4cb7-b57c-f4bd15c97f27)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/a3f7cedc-f622-4992-9da2-b51ff92ad2a2)
 
 
 Version Control: This is the stage where developers’ code gets committed and pushed after they have tested their work locally. Build: Depending on the type of language or technology used, we may need to build the codes into binary executable files (in case of compiled languages) or just package the codes together with all necessary dependencies into a deployable package (in case of interpreted languages).
@@ -113,7 +113,7 @@ As part of the ongoing infrastructure development with Ansible started from Proj
 The problem with that approach is, it would be difficult to package and version the software for different releases. And so, in this project, we will be using a different approach for releases, rather than downloading directly from git, we will be using Ansible uri module.
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/b62443ca-1aa0-4034-a96a-c162d7b46074)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/07832028-eb88-4a49-87cb-7195d8d3b5c3)
 
 
 ### Set Up
@@ -129,7 +129,7 @@ start with the Ansible server (RHEL8 instance)
 Install Git on the ANSIBLE server
 
 
-![](http://localhost:9425/images/6a7ff757-34f9-49db-897d-d3e63b16b417.png)
+![Install Git on Ansible Server](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/b390e9ec-e78b-4adf-a5c5-dcbbe07c1329)
 
 
 clone the ansible config mgt repo to the new ansible instance server
@@ -137,31 +137,23 @@ clone the ansible config mgt repo to the new ansible instance server
 Install Epel and Remi Repo Release as well as Java
 
 
-![](http://localhost:9425/images/56f632af-db95-414b-a10d-9bc8645db57a.png)
+![Install Epel](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/8275ee2a-e236-41b5-a92c-f68cdda725fa)
 
 
 updating bash profile to export java for ease of usage
 
 
-![5 updating bash profile to export java for ease of usage](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/84c36cc3-60ae-4187-b532-981ce023229e)
-
-
-![6 updating the bash profile](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/d8a31e8b-a49f-48fb-9091-af5c2213854a)
-![7 reloading the bash profile](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/5fce8853-c311-449d-9f92-d0434deb2074)
-
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/a720992f-b28f-4e74-9630-407b9f213b46)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/27a04379-652a-48a1-bf9a-9acd5473424a)
 
 installing Jenkins
 
 
-![8 installing Jenkins](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/cda90966-4901-4778-ac29-e82a6c2a0d1a)
-![9 start enable and check status of Jenkins](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/891a6a93-3946-4b1e-b84a-5c5581372a3b)
-![10 getting the initial password for Jenkins](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/5d7d8ec8-751f-4ab1-a0f4-b536e42a441e)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/99c35a02-d7e1-4fe3-9eb4-f4d2d7cf1004)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/4da150ff-7773-4be1-a8b3-e88e03841b95)
 
 
 log in to Jenkins on browser using public Ip and password from terminal
-
-
-![](http://localhost:9425/images/9966b6f8-d94b-4843-b478-0baecc7a0df2.png)
 
 
 To get started, we will focus on these environments initially.
@@ -177,33 +169,33 @@ Both SIT – For System Integration Testing and UAT – User Acceptance Testing 
 What we want to achieve, is having Nginx to serve as a reverse proxy for our sites and tools. Each environment setup is represented in the below table and diagrams.
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/2b6861de-f234-420d-a277-fd4e10372355)
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/5b0124fc-cd88-45c8-b932-b8bd9c4c6263)
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/f36cdff9-c09a-4282-b391-ff23427ff473)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d5e8463d-89f3-4f83-9c2f-6089435ce53b)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/1d88d1dd-2f81-49a1-91a4-321fe97a3540)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/495f560e-c237-483d-9389-910a7869dd66)
 
 
 Ansible Inventory should look like this
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/00d259d1-21bc-4c3f-b0b2-f3906cbf8a3e)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/d12f9800-e818-4f14-81a3-6b44ec7b3c39)
 
 
 ci inventory file
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/08248dba-6789-4943-806e-a82bd1e04444)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/fdc80555-0e64-4e3e-814e-acadb8ad3a95)
 
 
 dev Inventory file
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/a63433f0-1998-4378-a2a0-5cf1b8088adc)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/e6ea1fb1-f863-471a-a54a-f7fb8bacd03f)
 
 
 pentest inventory file
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/b194a2ab-44bd-4525-b0fb-a861223a7ec2)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/5844bfe0-5846-41e6-9873-321b6417faee)
 
 
 ### Observations:
@@ -243,13 +235,13 @@ Navigate to Jenkins URL
 Install & Open Blue Ocean Jenkins Plugin
 
 
-![](http://localhost:9425/images/fdbf7945-38ed-4f06-b45b-e9e922c81ac7.png)
+![Install Blue Ocean Plugin](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/f628b897-cf88-4da3-bf38-a66566a123ba)
 
 
 Create a new pipeline
 
 
-![](http://localhost:9425/images/4b8e6619-80f6-4471-bb51-68217968d149.png)
+![Create New Pipeline](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ce102ede-ad78-4613-84e4-cc013f82a761)
 
 
 Select GitHub
@@ -263,7 +255,7 @@ Copy Access Token
 Paste the token and connect
 
 
-![](http://localhost:9425/images/b9bcd611-c8ab-417c-b274-e238774eb196.png)
+![Access Token](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/c6f3e727-9342-4737-9393-8f4b6234ce53)
 
 
 Create a new Pipeline
@@ -273,7 +265,7 @@ At this point you may not have a Jenkinsfile in the Ansible repository, so Blue 
 Here is our newly created pipeline. It takes the name of your GitHub repository.
 
 
-![](http://localhost:9425/images/ae6cf8fe-d368-41f0-ae1c-e70c3f04dcbf.png)
+![Create New Pipeline](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/dff85ac4-de9b-4380-94a9-5c53aef719c2)
 
 
 #### Let us create our Jenkinsfile
@@ -281,7 +273,7 @@ Here is our newly created pipeline. It takes the name of your GitHub repository.
 Inside the Ansible project, create a new directory deploy and start a new file Jenkinsfile inside the directory.
 
 
-![16 creating a new folder called deploy and a file called jenkinsfile](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/9800e820-dd14-412c-b070-6280cb5da1a5)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/cd750485-f1e6-4103-be65-7a1baff44412)
 
 
 Add the code snippet below to start building the Jenkinsfile gradually. This pipeline currently has just one stage called Build and the only thing we are doing is using the shell script module to echo Building Stage
@@ -303,7 +295,7 @@ pipeline {
 ```
 
 
-![17 script inside jenkins file](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/937475f8-4a6c-4227-af0f-3e576962ea83)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/716fa1ba-f31e-47d5-b3e3-ca9fe5599bc9)
 
 
 Deploy folder reflecting in GitHub repo
@@ -311,7 +303,7 @@ Deploy folder reflecting in GitHub repo
 Now go back into the Ansible pipeline in Jenkins, and select configure
 
 
-![](http://localhost:9425/images/c1242522-f195-425c-a175-a02342d239ad.png)
+![Ansible Pipeline Jenkins](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/696248a8-1756-4389-b269-dab21983cd4f)
 
 
 Scroll down to Build Configuration section and specify the location of the Jenkinsfile at deploy/Jenkinsfile
@@ -329,7 +321,7 @@ Select your project
 Click on the play button against the branch
 
 
-![](http://localhost:9425/images/33e909fd-2186-4709-bdf5-0836a2a751d8.png)
+![Blue Ocean Play Button](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/5122b8b1-4690-4821-99aa-497246ad95fe)
 
 
 Notice that this pipeline is a multibranch one. This means, if there were more than one branch in GitHub, Jenkins would have scanned the repository to discover them all and we would have been able to trigger a build for each branch.
@@ -339,7 +331,7 @@ Let us see this in action.
 Create a new git branch and name it feature/jenkinspipeline-stages
 
 
-![](http://localhost:9425/images/7cacdd42-592f-4fdf-8079-b3fff0b4e827.png)
+![New Git Branch](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/75300ded-fb88-4844-bde7-ef11a5b0e2b2)
 
 
 Currently we only have the Build stage. Let us add another stage called Test. Paste the code snippet below and push the new changes to GitHub.
@@ -369,7 +361,7 @@ Currently we only have the Build stage. Let us add another stage called Test. Pa
 ```
 
 
-![](http://localhost:9425/images/4d4963a4-b7b4-4bf1-878e-aec7cd5e9c44.png)
+![Testing Stage](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/2785d4bd-d0d9-4d8d-a637-4f18f5d3b3a9)
 
 
 To make your new branch show up in Jenkins, we need to tell Jenkins to scan the repository.
@@ -383,7 +375,7 @@ Refresh the page and both branches will start building automatically. You can go
 In Blue Ocean, you can now see how the Jenkinsfile has caused a new step in the pipeline launch build for the new branch.
 
 
-![](http://localhost:9425/images/b90d9846-a26c-4184-8e46-bc8a07c7dff5.png)
+![Stages Working](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/a064edeb-9523-44c2-af34-5d3fe949cfc9)
 
 
 ### A QUICK TASK FOR US!
@@ -399,13 +391,13 @@ In Blue Ocean, you can now see how the Jenkinsfile has caused a new step in the 
 1. Verify in Blue Ocean that all the stages are working, then merge your feature branch to the main branch
 
 
-![](http://localhost:9425/images/f0071cfb-9c6c-49e2-bde2-be519db25efc.png)
+![Stages Working](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/a064edeb-9523-44c2-af34-5d3fe949cfc9)
 
 
 1. Eventually, your main branch should have a successful pipeline like this in blue ocean
 
 
-![](http://localhost:9425/images/22bd19af-dccf-4d89-bccf-a6ca01da0e3f.png)
+![Successful Pipeline](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/c5e61494-e952-4935-b5a0-c7dee4372dc1)
 
 ### RUNNING ANSIBLE PLAYBOOK FROM JENKINS
 
@@ -414,26 +406,22 @@ Now that you have a broad overview of a typical Jenkins pipeline. Let us get the
 Installing Ansible on Jenkins
 
 
-![](http://localhost:9425/images/20fae9fe-5b51-4bd9-9e74-cbfdde1749be.png)
-![33 installing postgresql from ansible galaxy](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/b2a58105-2b94-4cfd-8462-75354d1f42e7)
+![Installing Ansible on Jenkins](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/264fbd66-98d8-470a-8dc6-fbeeede4cdb4)
 
 
 Installing Ansible plugin in Jenkins UI
 
 
-![](http://localhost:9425/images/98a86fe9-2f66-4a61-b0b8-fad5164aae0b.png)
+![Ansible Plugin Jenkins](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/71ffb8a0-5cdd-4fe7-911a-5b098b078d7d)
 
 
 Creating Jenkinsfile from scratch. (Delete all you currently have in there and start all over to get Ansible to run successfully)
 
 
-![](http://localhost:9425/images/a90717d2-5eb0-4e75-908d-51bf03c981b9.png)
-
-![](http://localhost:9425/images/64a0bb5e-165d-4fd7-979c-4d8a46fc86ad.png)
-
-![](http://localhost:9425/images/3aa4985e-bc96-493c-a188-5285d50a48c0.png)
-
-![](http://localhost:9425/images/55a5611b-f378-495d-a4ca-d84f16474435.png)
+![Creating Jenkins File 1](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/3b204fbe-7241-4a64-9030-bb99d8bdb638)
+![Creating Jenkins File 2](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/4fc113b9-af7f-45e7-9e03-492401636ee7)
+![Creating Jenkins File 3](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/2b617443-e5b7-43ca-ab00-8c9512d305e8)
+![Creating Jenkins File 4](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/c7b88af9-e4bc-4bca-8f5d-c5d33908ddf8)
 
   
 ```
@@ -509,13 +497,10 @@ ssh_args = -o ControlMaster=auto -o ControlPersist=30m -o ControlPath=/tmp/ansib
 Note: Ensure that Ansible runs against the Dev environment successfully.
 
   
-![](http://localhost:9425/images/5ceff9f7-eb8f-41ce-bd82-31b6dc17a7c1.png)
-
-![](http://localhost:9425/images/6dddfbfb-65e4-4b4b-9990-1ccb448a9a01.png)
-
-![](http://localhost:9425/images/baf19717-3b8d-4cc0-8f01-32f8fb9b3d8e.png)
-
-![](http://localhost:9425/images/97c18d18-1329-4e1e-bad3-463226fb33e1.png)
+![Ansible runs Dev 1](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/daa6c89c-a36c-4d94-9970-88ecde3d3cc5)
+![Ansible runs Dev 3](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0b894638-5d9a-4171-925c-9f55441dd16d)
+![Ansible runs Dev 4](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/5c7dd463-b927-4d60-9bcb-8df19f723f5f)
+![Ansible runs Dev 5](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/7f7df280-f956-4f01-bf09-427a363bcb7d)
 
 
 If everything goes well for you, it means, the Dev environment has an up-to-date configuration. But what if we need to deploy to other environments?
@@ -533,7 +518,7 @@ To deploy to other environments, we will need to use parameters.
 Update sit inventory with new servers
 
 
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/59777a29-7029-4285-b491-af56cbc8e456)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/81df6d1e-a609-4129-a31f-afecfe3c5c37)
 
 
 Update Jenkinsfile to introduce parameterization. Below is just one parameter. It has a default value in case if no value is specified at execution. It also has a description so that everyone is aware of its purpose.
@@ -551,20 +536,20 @@ pipeline {
 In the Ansible execution section, remove the hardcoded inventory/dev and replace with \`${inventory} From now on, each time you hit on execute, it will expect an input.
 
   
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/12ff0b2e-ff00-48d1-ad9e-4b2cf76a5091)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/818f8186-b337-41e6-879c-aefc126a6830)
 
   
 Notice that the default value loads up, but we can now specify which environment we want to deploy the configuration to. Simply type sit and hit Run
 
   
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/10df9ec1-41b2-4bd1-b0ee-e1cf81a58c4f)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/75a26a55-efd2-4160-840c-e4b812edd13a)
 
   
 Add another parameter. This time, introduce tagging in Ansible. You can limit the Ansible execution to a specific role or playbook desired. Therefore, add an Ansible tag to run against webserver only. Test this locally first to get the experience. Once you understand this, update Jenkinsfile and run it from Jenkins.
 
   
-![](http://localhost:9425/images/7a77b7bd-0d02-47cf-ac3a-30eb0dd319d0.png)
-![](http://localhost:9425/images/6e0efae5-f195-4f8c-a5c1-5f8fdde99ac5.png)
+![Ansible Execution 1](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/099c6200-e1fb-45ea-ae97-e3b90978425c)
+![Ansible Execution 2](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/2487cddd-4110-4362-8ccb-00d7016a3b36)
 
 
 ## CI/CD PIPELINE FOR TODO APPLICATION
@@ -584,7 +569,7 @@ Fork the repository below into your GitHub account
 On you Jenkins server, install PHP, its dependencies and Composer tool (Feel free to do this manually at first, then update your Ansible accordingly later)
 
   
-![](http://localhost:9425/images/711ebba2-29e2-4117-b551-6d0693898e69.png)
+![Install PHP](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ebb5356b-dde3-4987-bc85-9be162f09a36)
 
 
 ####   
@@ -594,13 +579,13 @@ On you Jenkins server, install PHP, its dependencies and Composer tool (Feel fre
 Plot plugin
  
 
-![](http://localhost:9425/images/b6aed0b8-28b8-4a9f-979a-e60fa57bbdac.png)
+![Plot Plugin](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/49469aa9-fc0d-4575-bd32-1d4c2e8c33bc)
 
   
 Artifactory plugin
 
   
-![](http://localhost:9425/images/26d2be92-4972-494b-b194-781a57087e72.png)
+![Artifactory Plugin](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/5d821bed-7a6a-4155-830d-d14bee0f79ef)
 
   
 We will use plot plugin to display tests reports, and code coverage information.
@@ -610,7 +595,7 @@ The Artifactory plugin will be used to easily upload code artifacts into an Arti
 In Jenkins UI configure Artifactory
 
   
-![](http://localhost:9425/images/96f4abba-5d6a-4cab-88ed-56e7e53379ff.png)
+![Jenkins UI Artifactory](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/fddeb288-d8f8-41a7-ab2a-740d7e3a6357)
 
 
 Configure the server ID, URL and Credentials, run Test Connection.
@@ -618,13 +603,13 @@ Configure the server ID, URL and Credentials, run Test Connection.
 ### Phase 2 – Integrate Artifactory repository with Jenkins
 
   
-![](http://localhost:9425/images/83e50c73-1344-46ff-b970-e9c9e097b453.png)
+![Integrate Artifactory](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/13544cd1-ecf6-4ec3-a40c-e4e512b0221f)
 
   
 Create a dummy Jenkinsfile in the repository
 
   
-![](http://localhost:9425/images/daf5a03b-23b7-45a6-acf8-926d2537963a.png)  
+![Dummy Jenkinsfile](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/3967060d-c89d-4b8c-8928-5b0e5e95bee1) 
 
 
 Using Blue Ocean, create a multibranch Jenkins pipeline
@@ -738,8 +723,8 @@ This plugin provides generic plotting (or graphing) capabilities in Jenkins. It 
 You should now see a Plot menu item on the left menu. Click on it to see the charts. (The analytics may not mean much to you as it is meant to be read by developers. So, you need not worry much about it – this is just to give you an idea of the real-world implementation).
 
   
-![](http://localhost:9425/images/22bed764-b5c4-4da8-9a34-5742712e5009.png)
-![](http://localhost:9425/images/ff3d8cce-0897-4f46-a391-72eb26c52a08.png)  
+![Plot Build Data](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/c78a6ad8-de52-46bf-9f8e-5b1578dd9648)
+![Plot Build Bloc](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/ec52df4c-96d6-4133-b3ae-54cc3f6c5453)
 
   
 Bundle the application code for into an artifact (archived package) upload to Artifactory
@@ -809,19 +794,16 @@ Despite that DevOps CI/CD pipeline helps with fast software delivery, it is of t
 Install SonarQube on Ubuntu 20.04 With PostgreSQL as Backend Database
 
   
-![](http://localhost:9425/images/5a34d129-a14f-496a-964c-acc27f941bc3.png)
+![Sonarqube EC2](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/440641e4-03e4-43d4-b02a-e5aa5e527ca5)
 
 
 CONFIGURE SONARQUBE
 
   
-![](http://localhost:9425/images/87f1c879-68af-47a5-bb5b-cb6703386f8f.png)
+![Configure Sonarqube](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/17dbcb59-9274-4a41-9803-597580272abf)
 
   
 We cannot run SonarQube as a root user, if you run using root user it will stop automatically. The ideal approach will be to create a separate group and a user to run SonarQube
-
-  
-![](http://localhost:9425/images/ef630f3b-82ab-4a82-8938-5ceed1b87644.png)
 
 
 Access SonarQube
@@ -831,7 +813,7 @@ To access SonarQube using browser, type server’s IP address followed by port 9
 [http://server\_IP:9000](http://server_IP:9000) OR [http://localhost:9000](http://localhost:9000)
 
   
-![](http://localhost:9425/images/6499ca41-7151-44dd-bb80-5b753bc76ea6.png)
+![Sonarqube Browser](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/921d39bc-2a9c-4aed-bc6f-d82eb8f903a8)
 
   
 Login to SonarQube with default administrator username and password – admin
@@ -844,13 +826,13 @@ Now, when SonarQube is up and running, it is time to setup our Quality gate in J
 In Jenkins, install SonarScanner plugin
 
   
-![](http://localhost:9425/images/4d2ea222-0cb8-4d1f-bc48-fe7d302bae73.png)
+![Sonarqube Scanner Plugin](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/55bbcb19-cf8c-4cad-800d-51e92c72c9a0)
 
   
 Navigate to configure system in Jenkins. Add SonarQube server as shown below:
 
   
-![](http://localhost:9425/images/fdcd0ab4-6708-4551-8709-4c66ee34ba19.png)
+![Add Sonarqube URL](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/9f749b36-7916-41a4-bc24-186c16500576)
 
 
 Manage Jenkins > Configure System
@@ -864,13 +846,13 @@ Configure Quality Gate Jenkins Webhook in SonarQube – The URL should point to 
 Administration > Configuration > Webhooks > Create
 
   
-![](http://localhost:9425/images/ac328531-03ac-435f-bd5a-172028f277cd.png)  
+![Sonarqube Webhooks](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/c5a450fb-4999-4a65-b233-0a5aa28c258b)
 
 
 Setup SonarQube scanner from Jenkins – Global Tool Configuration
 
   
-![](http://localhost:9425/images/752c210b-e600-4759-807b-df4db1940663.png)
+![Sonarqube Scanner Jenkins Global Tool Config](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/6b9ec075-2025-4951-aab4-64e58ffefc80)
 
   
 Manage Jenkins > Global Tool Configuration
@@ -897,9 +879,9 @@ Below is the snippet for a Quality Gate stage in Jenkinsfile.
 NOTE: The above step will fail because we have not updated sonar-scanner properties
 
   
-![](http://localhost:9425/images/9eecdfec-f597-429c-bcec-29fd47405f7b.png)
+![Sonarqube Analysis Error](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/0f862f00-6e3d-4646-ba25-11ea1fb5b6d1)
 
-  
+
 Configure sonar-scanner properties – From the step above, Jenkins will install the scanner tool on the Linux server. You will need to go into the tools directory on the server to configure the properties file in which SonarQube will require to function during pipeline execution.
 
 `cd /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/conf/`
@@ -913,8 +895,8 @@ Add configuration related to php-todo project
 sonar.host.url=[http://:9000](http://:9000) sonar.projectKey=php-todo #----- Default source code encoding sonar.sourceEncoding=UTF-8 sonar.php.exclusions=**/vendor/** sonar.php.coverage.reportPaths=build/logs/clover.xml sonar.php.tests.reportPath=build/logs/junit.xml
 
 
-![](http://localhost:9425/images/66e2a89b-c8ce-43fc-b704-db7eeeb3004d.png)  
-![](http://localhost:9425/images/1901ac7b-770f-49c8-ac76-3cdd89afedf2.png)  
+![Pipeline Overview](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/913f59c0-920a-4143-8087-16d6c6f203af)
+![Sonar Scanner PHP](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/1c6df71f-702e-48cc-b6a8-d1c3d113e7c1) 
 
 
 HINT: To know what exactly to put inside the sonar-scanner.properties file, SonarQube has a configurations page where you can get some directions.
@@ -930,7 +912,7 @@ ist the content to see the scanner tool sonar-scanner. That is what we are calli
 Output of ls -latr
 
   
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/6fda3d50-aebf-4366-a03c-b031560506a9)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/3f4c5c18-ae8e-48e8-8212-e195a2c12ed4)
 
   
 So far you have been given code snippets on each of the stages within the Jenkinsfile. But, you should also be able to generate Jenkins configuration code yourself.
@@ -940,13 +922,13 @@ To generate Jenkins code, navigate to the dashboard for the php-todo pipeline an
 Dashboard > php-todo > Pipeline Syntax
 
   
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/8fa8ba14-4716-4260-8cba-31d592e9a51f)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/9af01a47-0e1b-4c9e-8cc2-fe24efebc2f2)
 
-  
+
 Click on Steps and select withSonarQubeEnv – This appears in the list because of the previous SonarQube configurations you have done in Jenkins. Otherwise, it would not be there.
 
   
-![image](https://github.com/Sakirat/Project_Based_Learning/assets/110112922/ad326858-0a6a-44ef-8f7c-c7ca59711e25)
+![image](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/4dd910b9-ea9e-48e6-9b2c-4f4118d9e2a7)
 
   
 Within the generated block, you will use the sh command to run shell on the server. For more advanced usage in other projects, you can add to bookmarks this SonarQube documentation page in your browser.
@@ -957,7 +939,7 @@ Within the generated block, you will use the sh command to run shell on the serv
 Indeed, this has been one of the longest projects from Project 1, and if everything has worked out for you so far, you should have a view like below:
 
   
-![](http://localhost:9425/images/b2026907-d8bc-4ae6-9375-c83b523354d8.png)  
+![Sonar Scanner Success](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/b2eda470-61e8-412a-996f-4f760ef90e77)
 
 
 But we are not completely done yet!
@@ -971,7 +953,7 @@ There are bugs, and there is 0.0% code coverage. (code coverage is a percentage 
 If you click on php-todo project for further analysis, you will see that there is 6 hours’ worth of technical debt, code smells and security issues in the code.
 
   
-![](http://localhost:9425/images/e7be9a15-1e03-4397-8e94-1e81c2f59466.png)
+![PHP todo Analysis](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/42d735e5-353f-47b8-8b1c-e4b42d31d19f)
 
   
 In the development environment, this is acceptable as developers will need to keep iterating over their code towards perfection. But as a DevOps engineer working on the pipeline, we must ensure that the quality gate step causes the pipeline to fail if the conditions for quality are not met.
@@ -1037,7 +1019,7 @@ To test, create different branches and push to GitHub. You will realise that onl
 If everything goes well, you should be able to see something like this:
 
   
-![](http://localhost:9425/images/5e947e85-b9e9-44c6-9723-6c90ccd89bd6.png)
+![Sonarqube Analysis Error](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/5fbd0384-5b73-435e-b9ac-8b937bdbfdfb)
 
   
 Notice that with the current state of the code, it cannot be deployed to Integration environments due to its quality. In the real world, DevOps engineers will push this back to developers to work on the code further, based on SonarQube quality report. Once everything is good with code quality, the pipeline will pass and proceed with sipping the codes further to a higher environment.
@@ -1047,6 +1029,10 @@ Complete the following tasks to finish Project 14
 Introduce Jenkins agents – Add 2 more servers to be used as Jenkins agent. Configure Jenkins to run its pipeline jobs randomly on any available agent nodes.
 
 Configure webhook between Jenkins and GitHub to automatically run the pipeline when there is a code push.
+
+
+![Node Agents](https://github.com/Bamideleflint/Darey-PBL/assets/122679229/88d6a37c-da4d-43a4-9795-60956ff62543)
+
 
 Deploy the application to all the environments
 
